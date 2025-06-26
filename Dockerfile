@@ -18,6 +18,9 @@ COPY . .
 # Install dependencies Laravel
 RUN composer install --no-dev --optimize-autoloader
 
+# Salin .env.example jika .env belum ada
+RUN if [ ! -f .env ]; then cp .env.example .env; fi
+
 # Set permission
 RUN chmod -R 775 storage bootstrap/cache
 
@@ -25,4 +28,4 @@ RUN chmod -R 775 storage bootstrap/cache
 EXPOSE 8080
 
 # Start Laravel on port 8080
-CMD php artisan serve --host=0.0.0.0 --port=8080
+CMD php artisan serve --host=0.0.0.0 --port=${PORT}
