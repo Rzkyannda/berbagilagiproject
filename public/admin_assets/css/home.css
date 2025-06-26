@@ -1,0 +1,420 @@
+/* public/assets/css/style.css */
+
+/* Hero */
+.hero {
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 50px 60px;
+    margin-bottom: 250px;
+}
+
+.hero-left {
+    position: relative;
+    width: auto; /* beri ruang untuk overlap horizontal */
+    height: 400px; /* cukup untuk overlap vertikal */
+}
+
+.hero-left img {
+    position: absolute;
+    width: 435px;
+    height: 290px;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+}
+
+/* Gambar belakang */
+.hero-left img:first-child {
+    top: 70px; /* geser ke bawah */
+    left: 30px; /* geser ke kanan */
+    z-index: 0;
+}
+
+/* Gambar depan (di atas sedikit dan geser ke kanan) */
+.hero-left img:last-child {
+    top: 240px; /* geser ke bawah */
+    left: 210px; /* geser ke kanan */
+    z-index: 1;
+}
+@media(max-width: 1199px) {
+    .hero{
+        padding: 50px 0px;
+    }
+    .hero-left img {
+    width: 400px;
+    height: 245px;
+    }
+    .hero-left img:first-child {
+    top: 70px; /* geser ke bawah */
+    left: 30px; /* geser ke kanan */
+    z-index: 0;
+    }
+
+    /* Gambar depan (di atas sedikit dan geser ke kanan) */
+    .hero-left img:last-child {
+    top: 230px; /* geser ke bawah */
+    left: 200px; /* geser ke kanan */
+    z-index: 1;
+    }
+}
+@media(max-width: 991px) {
+    .hero{
+        padding: 50px 60px;
+    }
+    .hero-left img {
+    width: 400px;
+    height: 245px;
+    }
+    .hero-left img:first-child {
+    top: 70px; /* geser ke bawah */
+    left: 30px; /* geser ke kanan */
+    z-index: 0;
+    }
+
+    /* Gambar depan (di atas sedikit dan geser ke kanan) */
+    .hero-left img:last-child {
+    top: 210px; /* geser ke bawah */
+    left: 190px; /* geser ke kanan */
+    z-index: 1;
+    }
+}
+@media(max-width: 767px) {
+    .hero-left img {
+    width: 270px;
+    height: 220px;
+    }
+    .hero-left img:first-child {
+    top: 70px; /* geser ke bawah */
+    left: 30px; /* geser ke kanan */
+    z-index: 0;
+    }
+
+    /* Gambar depan (di atas sedikit dan geser ke kanan) */
+    .hero-left img:last-child {
+    top: 190px; /* geser ke bawah */
+    left: 160px; /* geser ke kanan */
+    z-index: 1;
+    }
+}
+
+.hero-right {
+    flex: 1;
+    padding-left: 20px;
+    padding-top: 130px;
+    max-width: 600px;
+    margin-bottom: -70px;
+}
+
+@media(max-width: 554px) {
+    .hero-left img {
+    width: 240px;
+    height: 190px;
+    }
+    .hero-left img:first-child {
+    top: 70px; /* geser ke bawah */
+    left: 30px; /* geser ke kanan */
+    z-index: 0;
+    }
+    /* Gambar depan (di atas sedikit dan geser ke kanan) */
+    .hero-left img:last-child {
+    top: 170px; /* geser ke bawah */
+    left: 90px; /* geser ke kanan */
+    z-index: 1;
+    }
+    .hero-right {
+    margin-top: -100px;
+    margin-bottom: -200px;
+    }
+}
+
+@media(max-width: 447px) {
+    .hero{
+        padding: 70px 20px;
+    }
+    .hero-left img {
+    width: 200px;
+    height: 160px;
+    }
+    .hero-left img:first-child {
+    top: 70px; /* geser ke bawah */
+    left: 30px; /* geser ke kanan */
+    z-index: 0;
+    }
+    /* Gambar depan (di atas sedikit dan geser ke kanan) */
+    .hero-left img:last-child {
+    top: 170px; /* geser ke bawah */
+    left: 90px; /* geser ke kanan */
+    z-index: 1;
+    }
+    .hero-right {
+    margin-top: -100px;
+    margin-bottom: -200px;
+    }
+}
+
+.hero-right h1 {
+    font-size: 48px;
+    color: #28a745;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.hero-right p {
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+.btn-primary {
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    padding: 10px 16px;
+    font-weight: 200;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Produk */
+.produk-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.produk-kiri {
+    flex: 1;
+    min-width: 300px;
+    padding-left: 20px;
+}
+
+.produk-kiri h1 {
+    font-size: 48px;
+    margin-bottom: 16px;
+    color: #28a745;
+}
+
+.produk-kiri p {
+    font-size: 20px;
+    color: #4b5563;
+    margin-bottom: 20px;
+    max-width: 400px;
+}
+
+.lihat-btn {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.lihat-btn:hover {
+    background-color: #1c5e2c;
+}
+
+/* Social Buttons - Instagram and WhatsApp */
+.social-buttons {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.social-btn i {
+    font-size: 18px;
+}
+
+.instagram-btn {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: white;
+}
+
+.instagram-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(220, 39, 67, 0.3);
+}
+
+.whatsapp-btn {
+    background-color: #25d366;
+    color: white;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128c7e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.produk-kanan {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px; /* sesuai jarak antar card di Figma */
+    justify-content: center; /* tengah */
+    padding: 20px 0;
+}
+
+/* Card produk */
+.produk-card {
+    background: #ffffff;
+    border: 1.3px solid #d9d8d8;
+    border-radius: 24px;
+    width: 350px;
+    min-height: 370px; /* disesuaikan */
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.produk-card img {
+    width: 310px;
+    height: 291.37px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.produk-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.produk-info h3 {
+    margin: 0;
+    font-weight: 500;
+    font-size: 26.6368px;
+}
+
+.produk-info p {
+    margin: 4px 0;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 23px;
+    color: #929292;
+}
+
+.produk-info a {
+    background-color: #e8f5e9;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 31px;
+    gap: 15px;
+    width: 270px;
+    height: 16px;
+    border: 1px solid #4abd86;
+    border-radius: 204px;
+    flex: none;
+    order: 3;
+    align-self: stretch;
+    flex-grow: 0;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #4abd86;
+    text-decoration: none;
+}
+
+.produk-info a:hover {
+    background-color: #c8e6c9;
+}
+
+/* Masukan */
+.masukan-section {
+    position: relative;
+    padding: 80px 20px;
+    background: #fff;
+}
+
+.masukan-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.masukan-heading {
+    font-size: 48px;
+    font-weight: bold;
+    color: #1f8760; /* Warna hijau seperti Figma */
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.masukan-subheading {
+    font-size: 16px;
+    margin-top: 4px;
+    margin-bottom: 14px;
+    color: #333;
+    text-align: center;
+}
+
+.testimoni-card {
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 16px;
+    background: #fff;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.testimoni-card p {
+    font-size: 14px;
+    color: #444;
+    margin: 0;
+}
+
+.btn-masukan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    gap: 8px;
+    width: 236px;
+    height: 64px;
+    background: #ffffff;
+    border: 1px solid #4abd86;
+    border-radius: 100px;
+    color: #4abd86;
+    font-weight: 600;
+    text-decoration: none;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    margin-top: 20px;
+}

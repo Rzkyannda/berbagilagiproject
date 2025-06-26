@@ -1,0 +1,114 @@
+/*HOME CSS*/
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.offcanvas-body .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.offcanvas-body .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.offcanvas-body .nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.offcanvas-body .nav-icons img {
+    width: 34px;
+    height: 34px;
+    padding: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.offcanvas-body .btn-primary {
+    background-color: #27ae60;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.offcanvas-body .btn-outline {
+    background-color: transparent;
+    color: #27ae60;
+    padding: 0.4rem 1rem;
+    border: 2px solid #27ae60;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.offcanvas-body .btn-outline:hover {
+    background-color: #1c5e2c;
+}
+
+/* Footer */
+.footer {
+    background-color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.footer-divider {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 0;
+}
+
+.footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 24px;
+}
+
+.footer-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 16px;
+}
+
+.footer-description {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 16px;
+}
+
+.footer-socials a {
+    color: #1f8760;
+    font-size: 20px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+    color: #0f5e3c;
+}

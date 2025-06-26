@@ -1,0 +1,103 @@
+/* Body */
+/* Hero Section */
+.about-page {
+    font-family: "Arial", sans-serif;
+}
+
+.hero-section {
+    padding-top: 50px;
+    width: 100%;
+    max-width: 1980px;
+    height: 748px;
+    margin: 0 auto;
+
+    background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0) 22%,
+            rgba(74, 189, 134, 0.7) 48%
+        ),
+        url("../img/background-tentang.png") no-repeat center;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: rgb(0, 0, 0);
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    z-index: 1;
+    position: relative;
+}
+
+.hero-content h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    padding: 80px 64px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.section.reverse {
+    flex-direction: row-reverse;
+}
+
+.section .image img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 12px;
+}
+
+.section .text {
+    flex: 1;
+    text-align: justify;
+}
+
+.section h3 {
+    color: #4abd86;
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.donation-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.donation-step img {
+    width: 36px;
+    height: 36px;
+}
+
+.step-text strong {
+    font-weight: 600;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.step-text p {
+    margin: 0;
+    font-size: 15px;
+    color: #333;
+}

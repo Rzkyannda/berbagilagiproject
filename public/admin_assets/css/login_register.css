@@ -1,0 +1,38 @@
+body {
+    font-family: "Nunito", sans-serif;
+    background-color: #f0fdf4;
+}
+
+.card-modern {
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 0 30px rgba(0, 128, 0, 0.1);
+    overflow: hidden;
+}
+
+.form-control:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+.bg-side-image {
+    background-color: #28a745;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-side-image img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
