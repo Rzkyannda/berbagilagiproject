@@ -1,34 +1,28 @@
-# Gunakan PHP image CLI terbaru dengan dukungan Composer
-FROM php:8.2-cli
+# Gunakan image PHP dengan extensions yang diperlukan Laravel
+FROM php:8.2-fpm
 
-# Install dependensi sistem & ekstensi PHP (termasuk PostgreSQL)
+# Install dependencies
 RUN apt-get update && apt-get install -y \
-    git unzip curl libzip-dev libonig-dev libxml2-dev libpng-dev libpq-dev \
-    && docker-php-ext-install pdo pdo_pgsql zip mbstring
+    git unzip curl libpq-dev libzip-dev zip \
+    && docker-php-ext-install pdo pdo_pgsql zip
 
-# Install Composer (copy dari image Composer resmi)
+# Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Set direktori kerja
-WORKDIR /var/www/html
+# Set working directory
+WORKDIR /var/www
 
-# Salin seluruh isi project ke dalam container
+# Copy semua file ke dalam container
 COPY . .
 
-# Install dependensi Laravel
-RUN composer install --no-interaction --prefer-dist --optimize-autoloader
+# Install dependencies Laravel
+RUN composer install --no-dev --optimize-autoloader
 
-# Generate app key (tidak wajib di sini, karena bisa isi APP_KEY manual di env)
-# RUN php artisan key:generate
+# Set permission
+RUN chmod -R 775 storage bootstrap/cache
 
-# Clear config cache untuk memastikan env baru bisa masuk
-RUN php artisan config:clear
+# Expose port (Railway default 8080)
+EXPOSE 8080
 
-# Optional: jalankan migrasi ke database Supabase (jika perlu)
-# RUN php artisan migrate --force || true
-
-# Expose port Laravel default (Render membuka port 10000)
-EXPOSE 10000
-
-# Perintah untuk menjalankan Laravel
-CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=10000"]
+# Start Laravel on port 8080
+CMD php artisan serve --host=0.0.0.0 --port=8080
