@@ -1,28 +1,34 @@
-# Gunakan PHP CLI dengan Composer
+# Gunakan PHP image CLI terbaru dengan dukungan Composer
 FROM php:8.2-cli
 
-# Install ekstensi dan alat yang dibutuhkan
+# Install dependensi sistem & ekstensi PHP (termasuk PostgreSQL)
 RUN apt-get update && apt-get install -y \
-    git unzip curl libzip-dev libonig-dev libxml2-dev libpng-dev \
-    && docker-php-ext-install pdo pdo_mysql zip mbstring
+    git unzip curl libzip-dev libonig-dev libxml2-dev libpng-dev libpq-dev \
+    && docker-php-ext-install pdo pdo_pgsql zip mbstring
 
-# Install Composer
+# Install Composer (copy dari image Composer resmi)
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Atur direktori kerja
+# Set direktori kerja
 WORKDIR /var/www/html
 
-# Copy semua file project Laravel ke dalam container
+# Salin seluruh isi project ke dalam container
 COPY . .
 
 # Install dependensi Laravel
 RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 
-# Bersihkan cache konfigurasi
+# Generate app key (tidak wajib di sini, karena bisa isi APP_KEY manual di env)
+# RUN php artisan key:generate
+
+# Clear config cache untuk memastikan env baru bisa masuk
 RUN php artisan config:clear
 
-# Expose port default Laravel
+# Optional: jalankan migrasi ke database Supabase (jika perlu)
+# RUN php artisan migrate --force || true
+
+# Expose port Laravel default (Render membuka port 10000)
 EXPOSE 10000
 
-# Jalankan server Laravel
+# Perintah untuk menjalankan Laravel
 CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=10000"]
